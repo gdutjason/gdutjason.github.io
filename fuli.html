@@ -22,7 +22,7 @@
 		},
 		mounted () {
 		    axios
-		      .get('http://gank.io/api/data/%E7%A6%8F%E5%88%A9/1000/1')
+		      .get('https://gank.io/api/data/%E7%A6%8F%E5%88%A9/1000/1')
 		      .then(response => {
 		      		this.images = response.data.results;
 		      })
