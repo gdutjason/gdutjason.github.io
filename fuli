@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id='app'>
+			<img v-for="item in images" v-lazy="item.url"/>
+	</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/vue-lazyload/vue-lazyload.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript">
+	Vue.use(VueLazyload);
+	var vue = new Vue({
+		el:'#app',
+		data:{
+			images:[]
+		},
+		mounted () {
+		    axios
+		      .get('http://gank.io/api/data/%E7%A6%8F%E5%88%A9/1000/1')
+		      .then(response => {
+		      		this.images = response.data.results;
+		      })
+		},
+		methods:{
+			
+		}
+
+	});
+</script>
+</body>
+
+</html>
