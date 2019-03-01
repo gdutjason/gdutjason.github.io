@@ -14,7 +14,14 @@
 <script src="https://unpkg.com/vue-lazyload/vue-lazyload.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script type="text/javascript">
-	Vue.use(VueLazyload);
+	Vue.use(VueLazyload,{
+		preLoad:1,
+		listenEvents:['scroll'],
+		attempt:1,
+		loading:'./kda_akl.jpg',
+		try: 2, // 这个是加载图片数量
+		lazyComponent:true
+	});
 	var vue = new Vue({
 		el:'#app',
 		data:{
